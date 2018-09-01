@@ -20,7 +20,7 @@ turretDiameter = 27*mm
 turretClicks = 60
 turretClicksPerMoa = 4
 
-turretDiameterMargin = 0.5*mm
+turretDiameterMargin = 0.0*mm
 overscanWidth = 0*mm
 centerLineHeight = tapeHeight
 moaLineHeight = 1.5*mm
@@ -82,7 +82,7 @@ c.line(clX, 0, clX, 0 + centerLineHeight)
 c.setStrokeColor(yellow)
 c.setLineWidth(2)
 xd = 0
-for m in range(0,turretClicks/turretClicksPerMoa):
+for m in range(0,int(turretClicks/turretClicksPerMoa)):
     xd = xd + moaSpacing
     if xd > tapeWidth * 0.25:
         xd = xd - tapeWidth
@@ -122,7 +122,7 @@ c.setStrokeColor(yellow)
 c.setFillColor(yellow)
 c.setLineWidth(2)
 xd = 0
-for m in range(0,turretClicks/(2*turretClicksPerMoa)):
+for m in range(1,int(turretClicks/(2*turretClicksPerMoa))+1):
     xd = xd + moaSpacing
     c.line(clX + xd, 0, clX + xd, 0 + moaLineHeight)
     c.line(clX - xd, 0, clX - xd, 0 + moaLineHeight)
